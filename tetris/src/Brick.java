@@ -1,17 +1,22 @@
-import com.company.GameBoard;
+import javafx.scene.control.skin.TextInputControlSkin;
+import javafx.scene.paint.Color;
 
-public class Brick {
+class Brick {
 
     private int x, y;
     private final int width = 3;
     private final int height = 3;
+    protected Color color;
     private boolean[][] filledHomes = new boolean[width][height];
+    GameBoard gameBoard;
 
     public Brick(GameBoard gameBoard) {
-
+        this.gameBoard = gameBoard;
     }
 
     public Brick(GameBoard gameBoard, int x, int y) {
+
+        this.gameBoard = gameBoard;
         this.x = x;
         this.y = y;
     }
@@ -39,6 +44,14 @@ public class Brick {
 
     public int getHeight() {
         return height;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
     }
 
     public boolean[][] getFilledHomes() {
@@ -80,3 +93,4 @@ public class Brick {
     public void freeze() {
     }
 }
+// hey
